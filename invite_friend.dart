@@ -1,5 +1,7 @@
+// import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+// import 'package:getwidget/getwidget.dart';
 
 class InviteFriend extends StatelessWidget {
   const InviteFriend({super.key});
@@ -9,28 +11,29 @@ class InviteFriend extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
-          child: AppBar(
-            elevation: 0,
-            centerTitle: true,
-            backgroundColor: Colors.white,
-            title: Container(
-              height: 60,
-              width: 80,
-              child: Image.asset(
-                '../assets/images/bear.png',
-                filterQuality: FilterQuality.high,
-              ),
+        preferredSize: const Size.fromHeight(60),
+        child: AppBar(
+          elevation: 0,
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: Container(
+            height: 60,
+            width: 80,
+            child: Image.asset(
+              '../assets/images/invitation.png',
+              filterQuality: FilterQuality.high,
             ),
-            leading: null,
-            actions: const [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 35),
-                child: Icon(Icons.person_outline_outlined,
-                    color: Colors.purpleAccent, size: 35),
-              )
-            ],
-          ),),
+          ),
+          leading: null,
+          actions: const [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: Icon(Icons.person_outline_outlined,
+                  color: Colors.purpleAccent, size: 35),
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Container(
@@ -41,13 +44,14 @@ class InviteFriend extends StatelessWidget {
             child: Text(
               'find your freinds',
               style: GoogleFonts.poppins(
-                  color: Colors.white,
+                  color: Colors.purpleAccent,
                   fontWeight: FontWeight.bold,
                   fontSize: 17,
                   letterSpacing: 1),
             ),
           ),
           const SizedBox(height: 15),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
@@ -67,9 +71,11 @@ class InviteFriend extends StatelessWidget {
                               blurRadius: 1),
                         ]),
                     child: const TextField(
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.start,
                       decoration: InputDecoration(
-                        hintText: "sohail saleem",
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        hintText: "Hi,",
                         hintStyle: TextStyle(
                           color: Colors.grey,
                           fontWeight: FontWeight.bold,
@@ -104,10 +110,91 @@ class InviteFriend extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
+          // card:
+
+          // Container(
+            
+          //   width: double.infinity,
+          //   padding: EdgeInsets.symmetric(horizontal: 20),
+          //   child: Card(
+          //     elevation: 1,
+          //     shape: const RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.all(
+          //         Radius.circular(40),
+          //       ),
+          //     ),
+          //     child: Container(
+          //       height: 100,
+          //       // width: 450,
+          //       child: Column(
+          //         children: [
+          //           Row(
+          //             children: [
+          //               Padding(
+          //                 padding: const EdgeInsets.fromLTRB(15, 20, 5, 15),
+          //                 child: SizedBox(
+          //                   height: 60,
+          //                   width: 60,
+          //                   child: CircularProfileAvatar(
+          //                     "",
+          //                     backgroundColor: Colors.cyan,
+          //                     radius: 35,
+          //                   ),
+          //                 ),
+          //               ),
+          //               Column(
+          //                 children: [
+          //                   Padding(
+          //                     padding: const EdgeInsets.only(top: 5, bottom: 5),
+          //                     child: Text(
+          //                       '@sohail74',
+          //                       style: GoogleFonts.poppins(fontSize: 17),
+          //                     ),
+          //                   ),
+          //                   Padding(
+          //                     padding: const EdgeInsets.only(left: 0.0),
+          //                     child: Text(
+          //                       'sohail',
+          //                       style: GoogleFonts.poppins(),
+          //                     ),
+          //                   ),
+          //                 ],
+          //               ),
+          //               const Spacer(),
+          //               // button accept and decline:
+          //               Padding(
+          //                 padding: const EdgeInsets.all(8.0),
+          //                 child: Row(
+          //                   children: [
+          //                     GFButton(
+          //                       child: Text('Accept'),
+          //                       color: Colors.greenAccent,
+          //                       onPressed: () {},
+          //                       shape: GFButtonShape.pills,
+          //                     ),
+          //                     SizedBox(width: 10,),
+          //                     GFButton(
+                                
+          //                       child: Text('Decline'),
+          //                       color: Colors.redAccent,
+          //                       onPressed: () {},
+          //                       shape: GFButtonShape.pills,
+          //                     ),
+
+          //                   ],
+          //                 ),
+          //               )
+          //             ],
+          //           )
+          //         ],
+          //       ),
+          //     ),
+          //   ),
+          // ),
           SizedBox(
             height: 200,
             width: 200,
-            child: Image.asset('../assets/images/bear.png'),
+            child: Image.asset('../assets/images/mail.png'),
           ),
           const SizedBox(height: 20),
           Container(
@@ -122,14 +209,19 @@ class InviteFriend extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            style:ButtonStyle(
+            style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18),
+                ),
+              ),
             ),
             onPressed: () {},
-            child: Text("invite a friend",style:GoogleFonts.nunito(color: Colors.white),),
+            child: Text(
+              "invite a friend",
+              style: GoogleFonts.nunito(color: Colors.white),
+            ),
           )
         ],
       ),
